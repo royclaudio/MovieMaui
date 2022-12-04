@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieMaui.Account"
+             Title="Account"
+             
+             >
+    <!--xmlns:local="clr-namespace:MovieMaui.ViewModels"
+             x:DataType="local:MovieViewModel"-->
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--Main Card-->
+        <BoxView Color="Blue"
+                 Grid.ColumnSpan="4"/>
+        <Label Text="username" 
+                HeightRequest="50"
+                Grid.Column="0"
+                Grid.ColumnSpan="1"
+               />
+        <Label  HeightRequest="50"
+                Grid.Column="4"
+                Grid.ColumnSpan="1"
+                HorizontalOptions="End"
+                Text="Settings"
+               />
+        <!--Account Main Page-->
+        <!--<Label  Margin="0,0,0,60"
+                Text="{Binding Title}"
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.ColumnSpan="4"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label Margin="0,0,0,30"
+                Text="{Binding Directors}"
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label 
+                Text="{Binding DateTime}"
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />-->
+        <Label Margin="0,50,0,0"
+            Text="Movies you've liked" 
+                FontSize="Medium"
+                HeightRequest="50"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+               />
+        <CollectionView ItemsSource="{Binding ShowMovies}"   ItemsLayout="VerticalGrid, 3"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="4">
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image 
+                                Grid.RowSpan="2"
+                                Source="{Binding Imagepath}"
+                                Aspect="AspectFill"
+                                HeightRequest="250"
+                                WidthRequest="150" />
+                        <Label  Grid.Column="1"
+                                Text="{Binding Title}"
+                                FontAttributes="Bold"
+                                LineBreakMode="TailTruncation" />
+                        <Label  Grid.Column="1"
+                                Text="{Binding Year}"
+                                LineBreakMode="TailTruncation"
+                                FontAttributes="Italic"
+                                />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
+        <!--Main App Controls-->
+        <Button Clicked="GotoHome"
+                Margin="2,5,0,0"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Home"
+                SemanticProperties.Hint="Counts the number of times you click"
+                 />
+        <Button Clicked="GotoSearch"
+                Margin="5,5,5,0"
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Text="Search"
+                SemanticProperties.Hint="Counts the number of times you click"
+                />
+        <Button Clicked="GotoAccount"
+                Margin="0,5,2,0"
+                Grid.Row="2"
+                Grid.Column="3"
+                Text="Account"
+                SemanticProperties.Hint="Counts the number of times you click"
+                />
+    </Grid>
+
+</ContentPage>

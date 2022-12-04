@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieMaui.MainPage"
+             >
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+       <!--Main Card-->
+        <Image Grid.Row="0" 
+                x:Name="Images"
+                Grid.Column="0"
+               Grid.ColumnSpan="4"
+                Source="image0.jpeg"
+                WidthRequest="500"
+               
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HorizontalOptions="Center" />
+        <Button Margin="-310,20,-100,0"
+                FontSize="25"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+                Grid.Column="0"
+                BackgroundColor="Red"
+                Background="#00000000"
+                WidthRequest="235"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Counts the number of times you click"  Clicked="Liked" 
+                />
+        <Button Margin="310,20,60,0"
+                FontSize="0"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                WidthRequest="235"
+                HorizontalOptions="Center"
+                Background="#00000000"
+                SemanticProperties.Hint="Counts the number of times you click" Clicked="Disliked"
+               />
+        
+        <Label x:Name="Title"
+                Margin="5,0,0,50"
+                Text="Harry Potter and the Philosopher's Stone"
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                TextColor="White"
+                Grid.ColumnSpan="4"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label 
+                Margin="5,590,0,25"
+                Text="Director(s):"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+                FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label x:Name="Director"
+                Margin="120,590,0,25"
+                Text="J. K. Rowling"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+                FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label Margin="5,610,0,0"
+                Text="Year:"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+               FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <Label x:Name="Year"
+                Margin="60,610,0,0"
+                Text="1997"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+               FontSize="Subtitle"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        <!--Card Controls-->
+        <Button Margin="2,2,0,0"
+                Grid.Row="1"
+                Text="Like"
+                SemanticProperties.Hint="Counts the number of times you click"
+            />
+        <Button
+            Margin="5,2,5,0"
+                Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Text="Seen"
+                SemanticProperties.Hint="Counts the number of times you click"
+               />
+        <Button Margin="0,2,2,0"
+                Grid.Row="1"
+                Grid.Column="3"
+                x:Name="Like1"
+                Text="Dislike"
+                SemanticProperties.Hint="Counts the number of times you click"
+                />
+        <!--Main App Controls-->
+        <Button Clicked="GotoHome"
+                Margin="2,5,0,0"
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Home"
+                SemanticProperties.Hint="Counts the number of times you click"
+                 />
+        <Button Clicked="GotoSearch"
+                Margin="5,5,5,0"
+                Grid.Row="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Text="Search"
+                SemanticProperties.Hint="Counts the number of times you click"
+                />
+        <Button Clicked="GotoAccount"
+                Margin="0,5,2,0"
+                Grid.Row="2"
+                Grid.Column="3"
+                Text="Account"
+                SemanticProperties.Hint="Counts the number of times you click"
+                />
+    </Grid>
+    
+</ContentPage>
